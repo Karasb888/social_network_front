@@ -1,0 +1,20 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react",
+        "target": "es2016",
+        "module": "ES6",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "./**/*"
+    ]
+}
