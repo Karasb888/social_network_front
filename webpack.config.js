@@ -1,7 +1,9 @@
-const path =  require('path')
+const path = require('path')
 const autoprefixer = require('autoprefixer')
 
-const { NODE_ENV } = process.env;
+const {
+  NODE_ENV
+} = process.env;
 
 module.exports = {
   mode: NODE_ENV,
@@ -13,7 +15,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/front/dist/',
+    publicPath: '/dist/',
   },
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
@@ -21,12 +23,10 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
-        use: [
-          {
+        use: [{
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
@@ -76,15 +76,13 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false,
-              name: 'fonts/[name].[ext]',
-            },
+        use: [{
+          loader: 'file-loader',
+          options: {
+            esModule: false,
+            name: 'fonts/[name].[ext]',
           },
-        ],
+        }, ],
       },
     ],
   },
@@ -93,7 +91,7 @@ module.exports = {
     port: 3000,
     publicPath: '/dist/',
     proxy: {
-        '/api': `http://localhost:5000/api`
+      '/api': `http://localhost:5000/api`
     }
   },
 };

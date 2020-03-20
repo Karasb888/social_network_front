@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { Store } from 'redux';
 import { ApplicationState } from './store/index';
-import useRoutes from './routes';
+import useRoutes from './routes/root.route';
 
 interface Props {
   readonly store: Store<ApplicationState>;

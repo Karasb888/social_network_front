@@ -1,10 +1,10 @@
 import { combineReducers, Reducer } from 'redux';
 import { connectRouter, RouterState } from 'connected-react-router';
 import { History } from 'history';
-import { exampleReducer, ExampleState } from './example';
+import { usersReducer, UsersState } from './users';
 
 export interface ApplicationState {
-  example: ExampleState;
+  users: UsersState;
   router: RouterState;
 }
 
@@ -12,6 +12,6 @@ export const createRootReducer = (
   history: History
 ): Reducer<ApplicationState> =>
   combineReducers({
-    example: exampleReducer,
+    users: usersReducer,
     router: connectRouter(history),
   });

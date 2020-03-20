@@ -39,7 +39,7 @@ const LoginPage: React.FC = () => {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <div className={classes.form}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -74,7 +74,7 @@ const LoginPage: React.FC = () => {
           <Link to="/register">
             <Button color="primary">Don&apos;t have an account? Sign Up</Button>
           </Link>
-        </form>
+        </div>
       </div>
     </Container>
   );

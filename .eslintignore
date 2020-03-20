@@ -1,3 +1,4 @@
-dist/*
+dist/
 webpack.config.js
 env.d.ts
+node_modules/

@@ -1,5 +1,10 @@
 import * as React from 'react';
+import Layout from '../components/Layout';
 
-export const Home: React.FC = () => <div>This home page</div>;
+const HomePage: React.FC = () => (
+  <Layout>
+    <div>Content</div>
+  </Layout>
+);
 
-export default Home;
+export default HomePage;

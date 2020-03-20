@@ -3,8 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -32,16 +30,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const RegistrationPage: React.FC = () => {
+const RegistrationPage: React.FC = () => {
   const classes = useStyles();
 
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
 
   const changeEmailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // const normalizedEmail = normalizeEmail(e.target.value);
-    // setEmail(e.target.value);
-    // setEmailError(isEmail(normalizedEmail));
+    setEmail(e.target.value);
+    setEmailError(false);
   };
 
   return (
@@ -52,7 +49,7 @@ export const RegistrationPage: React.FC = () => {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <div>
+        <div className={classes.form}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -103,12 +100,6 @@ export const RegistrationPage: React.FC = () => {
                 autoComplete="current-password"
               />
             </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
           </Grid>
           <Button
             type="submit"
@@ -120,7 +111,7 @@ export const RegistrationPage: React.FC = () => {
             Sign Up
           </Button>
           <Link to="/login">
-            <Button color="primary">Don&apos;t have an account? Sign Up</Button>
+            <Button color="primary">Already have an account? Sign in</Button>
           </Link>
         </div>
       </div>
