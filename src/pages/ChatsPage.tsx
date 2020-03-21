@@ -1,9 +1,7 @@
 import * as React from 'react';
 
 const ChatsPage: React.FC = () => {
-    return (
-        
-    )
+  return <div />;
 };
 
 export default ChatsPage;

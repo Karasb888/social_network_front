@@ -2,19 +2,23 @@ import { Dispatch } from 'redux';
 import axios from 'axios';
 import { UsersActionTypes, UserObject } from './types';
 
-const requestOptions = {
-  headers: {
-    Authorization: 'Bearer 123',
-    ContentType: 'application/json',
-  },
-};
-
-export const fetchUsers = () => (dispatch: Dispatch): Promise<void> => {
-  const apiEndpoint = `api/users/${124125325}`;
+export const fetchUsers = (page: number, usersPerPage: number) => (
+  dispatch: Dispatch
+): Promise<void> => {
+  const apiEndpoint = `api/users/`;
   dispatch({ type: UsersActionTypes.SET_FETCH_STATUS, payload: 'pending' });
 
   return axios
-    .post(apiEndpoint, requestOptions)
+    .post(apiEndpoint, {
+      body: JSON.stringify({
+        page,
+        usersPerPage,
+      }),
+      headers: {
+        Authorization: 'Bearer 123',
+        ContentType: 'application/json',
+      },
+    })
     .then(response => {
       const users: Array<UserObject> = response.data;
 

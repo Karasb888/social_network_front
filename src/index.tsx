@@ -1,4 +1,5 @@
 import 'normalize.css';
+import './scss/global.scss';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { createBrowserHistory } from 'history';
