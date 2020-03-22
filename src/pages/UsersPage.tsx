@@ -1,12 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import UsersToolbar from '../components/UsersToolbar';
-import UsersTable from '../components/UsersTable';
+import UsersList from '../components/UsersList';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    padding: theme.spacing(3),
-  },
+  root: {},
   content: {
     marginTop: theme.spacing(2),
   },
@@ -71,7 +69,7 @@ const UsersPage: React.FC = () => {
     <div className={classes.root}>
       <UsersToolbar />
       <div className={classes.content}>
-        <UsersTable users={users} />
+        <UsersList users={users} />
       </div>
     </div>
   );

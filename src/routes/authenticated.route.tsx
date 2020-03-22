@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import UsersPage from '../pages/UsersPage';
 import Layout from '../components/Layout';
+import ChatsPage from '../pages/ChatsPage';
 
 export const authenticatedRoute = (): ReactElement => {
   return (
@@ -13,6 +14,9 @@ export const authenticatedRoute = (): ReactElement => {
         </Route>
         <Route path="/users" exact>
           <UsersPage />
+        </Route>
+        <Route path="/chats" exact>
+          <ChatsPage />
         </Route>
         <Redirect to="/" />
       </Switch>
