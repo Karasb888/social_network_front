@@ -1,8 +1,9 @@
 import { Reducer } from 'redux';
 import { MessagesState, MessagesActionTypes } from './types';
+import { mockedMessages } from '../mockedData';
 
 export const initialState: MessagesState = {
-  messagesList: [],
+  messagesList: mockedMessages,
   fetchStatus: 'none',
 };
 

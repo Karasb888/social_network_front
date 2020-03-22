@@ -9,6 +9,7 @@ export type MessageObject = {
   authorId: string;
   message: string;
   chatId: string;
+  id: string;
 };
 
 export interface MessagesState {

@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import dayjs from 'dayjs';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 import { ChatObject } from '../store/chats';
 
 interface ChatsListItemProps {
@@ -34,24 +35,29 @@ const ChatsListItem: React.FC<ChatsListItemProps> = props => {
   const { chat } = props;
 
   const classes = useStyles();
+  const history = useHistory();
+
+  const chatCardClickHandler = (): void => {
+    history.push(`/chat/${chat.chatInfo.id}`);
+  };
 
   const lastMessageAuthor = chat.users.find(
     user => user.id === chat.lastMessage.userId
   ).name;
   const chatPicture = chat.chatInfo.image
     ? chat.chatInfo.image
-    : chat.users.find(user => user.id === 'wett23523523523rwe').avatarUrl;
+    : chat.users.find(user => user.id === chat.lastMessage.userId).avatarUrl;
 
   return (
-    <Card className={classes.card}>
+    <Card onClick={chatCardClickHandler} className={classes.card}>
       <CardContent className={classes.cardContent}>
         <Grid container spacing={1}>
-          <Grid xs={6} md={2}>
+          <Grid xs={6} md={2} item>
             <Badge badgeContent={chat.unreadMessages} color="secondary">
               <Avatar src={chatPicture} />
             </Badge>
           </Grid>
-          <Grid xs={6} md={4}>
+          <Grid xs={6} md={4} item>
             <Typography>
               {chat.chatInfo.title ||
                 `Chat members: ${chat.users.map((user, index) => {
@@ -61,12 +67,12 @@ const ChatsListItem: React.FC<ChatsListItemProps> = props => {
                 })}`}
             </Typography>
           </Grid>
-          <Grid xs={12} md={5}>
+          <Grid xs={12} md={5} item>
             <Typography>
               {`${lastMessageAuthor} : ${chat.lastMessage.text}`}
             </Typography>
           </Grid>
-          <Grid xs={12} md={1}>
+          <Grid xs={12} md={1} item>
             <Typography variant="body1">
               {dayjs(chat.lastMessage.createdAt).format('DD/MM/YYYY')}
             </Typography>

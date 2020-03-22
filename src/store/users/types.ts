@@ -8,7 +8,7 @@ export type UserObject = {
   name: string;
   createdAt: number;
   email: string;
-  avatar: string;
+  avatarUrl: string;
 };
 
 export interface UsersState {

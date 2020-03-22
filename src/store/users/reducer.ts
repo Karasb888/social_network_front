@@ -1,8 +1,9 @@
 import { Reducer } from 'redux';
 import { UsersState, UsersActionTypes } from './types';
+import { mockedUsers } from '../mockedData';
 
 export const initialState: UsersState = {
-  usersList: [],
+  usersList: mockedUsers,
   fetchStatus: 'none',
 };
 

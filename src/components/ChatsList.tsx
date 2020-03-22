@@ -2,9 +2,10 @@ import * as React from 'react';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ChatsListItem from './ChatsListItem';
+import { ChatObject } from '../store/chats';
 
 interface ChatsListProps {
-  chats: Array<any>;
+  chats: Array<ChatObject>;
 }
 
 const useStyles = makeStyles(() => ({
@@ -13,7 +14,6 @@ const useStyles = makeStyles(() => ({
 
 const ChatsList: React.FC<ChatsListProps> = props => {
   const { chats } = props;
-
   const classes = useStyles();
 
   return (

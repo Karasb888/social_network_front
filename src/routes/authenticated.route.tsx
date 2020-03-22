@@ -4,6 +4,7 @@ import HomePage from '../pages/HomePage';
 import UsersPage from '../pages/UsersPage';
 import Layout from '../components/Layout';
 import ChatsPage from '../pages/ChatsPage';
+import ChatMessagesPage from '../pages/ChatMessagesPage';
 
 export const authenticatedRoute = (): ReactElement => {
   return (
@@ -17,6 +18,9 @@ export const authenticatedRoute = (): ReactElement => {
         </Route>
         <Route path="/chats" exact>
           <ChatsPage />
+        </Route>
+        <Route path="/chat/:id" exact>
+          <ChatMessagesPage />
         </Route>
         <Redirect to="/" />
       </Switch>

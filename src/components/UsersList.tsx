@@ -10,9 +10,10 @@ import {
   TablePagination,
   Grid,
 } from '@material-ui/core';
+import { UserObject } from '../store/users';
 
 interface UsersTableProps {
-  users: Array<any>;
+  users: Array<UserObject>;
 }
 
 const useStyles = makeStyles(theme => ({

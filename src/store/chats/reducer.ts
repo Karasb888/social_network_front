@@ -1,8 +1,9 @@
 import { Reducer } from 'redux';
 import { ChatsState, ChatsActionTypes } from './types';
+import { mockedChats } from '../mockedData';
 
 export const initialState: ChatsState = {
-  chatsList: [],
+  chatsList: mockedChats,
   fetchStatus: 'none',
 };
 
